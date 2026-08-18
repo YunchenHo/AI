@@ -1,0 +1,12 @@
+numpy
+matplotlib
+nltk
+jieba
+rank_bm25
+sentence-transformers
+transformers
+torch
+umap-learn
+rich
+tqdm
+bitsandbytes

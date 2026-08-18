@@ -42,12 +42,16 @@ pip install -r requirements.txt
 再打開 `part2_code_template.ipynb` 執行。
 
 ### HW4 — RAG Parameter Exploration
-Project 2：比較不同 RAG（Retrieval-Augmented Generation）設定對回答品質的影響，設計上是在 **Google Colab** 上執行（`515512_Group17_HW4_code.ipynb` 會用到 Colab 環境與掛載的資源，不建議在本機跑）。
+Project 2：比較不同 RAG（Retrieval-Augmented Generation）設定對回答品質的影響，實作 BM25（`rank_bm25` + `jieba` 斷詞）與 embedding（`sentence-transformers`）兩種檢索方式，接上 HuggingFace `transformers` 本地模型生成答案，並用 `umap-learn` 把 chunk 向量降維視覺化。
 
-> 這份目前是本機的舊版本，之後會換成 Colab 上的最新版。
+**建議在 Google Colab 上執行**（`515512_Group17_HW4_code.ipynb`），因為需要跑本地 LLM 推論（`torch` + `bitsandbytes` 量化），本機沒有 GPU 的話會很慢或跑不動。若要在本機跑：
+```bash
+cd HW4
+pip install -r requirements.txt
+```
 
 ## 注意事項
 
 - 上傳前已檢查過所有 `.py` / `.ipynb`，沒有硬編碼的 API key 或 token
 - 各資料夾的虛擬環境（`.venv/`、`venv/`）、`__pycache__/`、Jupyter checkpoint 都已列在根目錄 `.gitignore`，不會被提交
-- 目前所有檔案大小都在 GitHub 100MB 單檔限制內；如果 HW4 之後從 Colab 加入大型資料檔，記得先確認檔案大小
+- 目前所有檔案大小都在 GitHub 100MB 單檔限制內
