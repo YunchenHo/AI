@@ -1,0 +1,14 @@
+[project]
+name = "osm-search"
+version = "0.1.0"
+description = "AI homework route finding on OpenStreetMap graph data"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "matplotlib",
+    "numpy",
+    "pillow",
+]
+
+[tool.uv]
+package = false
